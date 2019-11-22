@@ -1,0 +1,50 @@
+div.post {
+    border: 1px solid gray;
+    padding: 20px;
+}
+
+div.aside {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+div.post {
+    position: relative;
+}
+
+.read {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.del {
+    color: rgb(148, 0, 0);
+}
+
+main {
+    min-height: 71vh;
+}
+
+footer {
+    padding: 30px;
+    background: #333a41;
+    color: #f1efef;
+    float: left;
+    width: 100%;
+    margin-top: 30px;
+}
+
+a.arrow {
+    font-size: 20px;
+    line-height: 22px;
+}

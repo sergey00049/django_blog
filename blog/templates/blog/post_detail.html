@@ -1,0 +1,33 @@
+{% extends 'blog/main.html' %}
+{% block main_section %}
+    <div class="col-sm-12 col-md-8 mr-auto ml-auto">
+        <div class="rounded mb-5 post">
+            <a href="{% url 'main' %}" class="text-muted">Вернуться назад </a>
+            {% if post.author == user %}
+                <a href="{% url 'update' post.id %}" class="text-muted">|  Обновить статью | </a>
+                <a href="{% url 'delete' post.id %}" class=" del"> Удалить статью</a>
+            {% endif %}
+            <h3 class="mt-3">{{ post.title|safe }}</h3>
+            <p class="preview">{{ post.text|safe }}</p>
+            <span>
+                <p>Дата: {{ post.data }}</p>
+                <p>Автор: <mark>{{ post.author }}</mark></p>
+            </span>
+        </div>
+{% endblock %}
+
+{% block aside_section %}
+    {% if posts %}
+    <div class="col-md-3 col-xl-4 ml-auto">
+        <div class="rounded aside mb-5 p-2">
+            <h5 class="text-center mt-2 mb-1">Читайте также</h5>
+            {% for article in posts %}
+                {% if article.id != post.id %}
+                    <hr class="mt-1 mb-1">
+                    <a href="{% url 'detail' article.id %}" class="text-muted mb-2">{{ article.title }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}

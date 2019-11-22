@@ -1,0 +1,20 @@
+{% extends 'blog/main.html' %}
+{% block user %}
+    <h2 class="d-block text-gray-dark text-muted">@{{ user.username }}</h2>
+    <p class="text-muted">Количество постов: <strong>{{ count }}</strong></p>
+    <hr class="text-muted mb-4">
+    {% if posts %}
+        <div class="col-md-9">
+            {% for post in posts %}
+                <div class="rounded mb-5 post">
+                    <h3>{{ post.title|safe }}</h3>
+                    <p class="preview">{{ post.text|striptags|truncatechars:150 }}</p>
+                    <span>
+                        <p>Дата: {{ post.data }}</p>
+                    </span>
+                    <a href="{% url 'detail' post.id %}" class="btn btn-outline-secondary read">Читать далее</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

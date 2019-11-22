@@ -1,0 +1,5 @@
+{% extends 'blog/main.html' %}
+{% block user %}
+    <h2>Вы успешна вышли из учетной записи</h2>
+    <span><a href="{% url 'login' %}">Войти</a> в личный кабинет снова</span>
+{% endblock %}

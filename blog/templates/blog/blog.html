@@ -1,0 +1,42 @@
+{% extends 'blog/main.html' %}
+{% block main_section %}
+    <div class="col-sm-12 col-md-9 mr-auto ml-auto">
+        {% if posts %}
+            {% for post in posts %}
+                <div class="rounded mb-5 post">
+                    <h3>{{ post.title|safe }}</h3>
+                    <p class="preview">{{ post.text|striptags|truncatechars:150 }}</p>
+                    <span>
+                        <p>Дата: {{ post.data }}</p>
+                        <p>Автор: <mark>{{ post.author }}</mark></p>
+                    </span>
+                    <a href="{% url 'detail' post.id %}" class="btn btn-outline-secondary read">Читать далее</a>
+                </div>
+            {% endfor %}
+
+            {% if is_paginated %}
+                
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-secondary arrow">←</a>
+                {% endif %}
+
+                
+                {% for num in page_obj.paginator.page_range %}
+                    {% if num == page_obj.number %}
+                        <a href="#" class="btn btn-secondary">{{ num }}</a>
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <a href="?page={{ num }}" class="btn btn-outline-secondary">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+                    
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-secondary arrow">→</a>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            <h1 class="text-muted">Постов пока нет. Можете написать первый.</h1>
+            <h5><a href="{% url 'add' %}">Написать</a> новый пост</h5>
+        {% endif %}
+    </div>
+{% endblock %}
