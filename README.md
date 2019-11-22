@@ -1,2 +1,2 @@
 # django_blog
-Проект на Django + PostgreSQL
+Проект на Django + PostgreSQL.
