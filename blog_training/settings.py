@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'vqcj3z)ri7+47c)$9&x)c5%9y)v(#iglpm+tj+=-$^&!k*i9&j')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'https://shrouded-cliffs-40121.herokuapp.com/',
