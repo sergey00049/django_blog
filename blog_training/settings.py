@@ -26,7 +26,10 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'vqcj3z)ri7+47c)$9&x)c5%9y)v(#i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'https://shrouded-cliffs-40121.herokuapp.com/',
+    '127.0.0.1'
+]
 
 
 # Application definition
