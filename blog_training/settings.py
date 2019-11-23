@@ -28,7 +28,8 @@ DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
 ALLOWED_HOSTS = [
     'https://shrouded-cliffs-40121.herokuapp.com/',
-    '127.0.0.1'
+    '127.0.0.1',
+    'shrouded-cliffs-40121.herokuapp.com'
 ]
 
 
