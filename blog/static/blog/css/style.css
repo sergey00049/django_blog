@@ -1,16 +1,28 @@
+/* Отображение страницы */
+body {
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 90px;
+}
+
+footer {
+    padding: 20px;
+    background: #333a41;
+    color: #f1efef;
+    float: left;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Отображение постов */
 div.post {
-    border: 1px solid gray;
+    box-shadow: 1px 1px 7px 0px;
     padding: 20px;
 }
 
 div.aside {
     width: 100%;
-    border: 1px solid gray;
-}
-
-ul {
-    margin: 0;
-    list-style-type: none;
 }
 
 div.post {
@@ -23,6 +35,7 @@ div.post {
     bottom: 20px;
 }
 
+/* Кнопки на странице поста */
 a:hover {
     text-decoration: none;
 }
@@ -31,20 +44,14 @@ a.del {
     color: rgb(148, 0, 0);
 }
 
-main {
-    min-height: 71vh;
-}
-
-footer {
-    padding: 30px;
-    background: #333a41;
-    color: #f1efef;
-    float: left;
-    width: 100%;
-    margin-top: 30px;
-}
-
+/* Пагинация */
 a.arrow {
     font-size: 20px;
     line-height: 22px;
+}
+
+/* Стили авторизации и регистрации */
+ul {
+    margin: 0;
+    list-style-type: none;
 }
